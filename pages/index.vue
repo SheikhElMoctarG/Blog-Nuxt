@@ -6,9 +6,10 @@
             color="#385F73"
             dark
           > <div class="t">
-            <v-card-title class="headline">
+            <nuxt-link class="link" :to="`/details/${item.id}`"> <v-card-title class="headline">
               {{item.title}}
             </v-card-title>
+            </nuxt-link>
 
             <v-card-subtitle> {{item.body}} </v-card-subtitle>
            </div>
@@ -40,6 +41,10 @@ export default {
 </script>
 
 <style>
+.link{
+  text-decoration: none;
+  color: white;
+}
 .container {
   margin: 3px;
   justify-content: center;
