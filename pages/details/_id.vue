@@ -16,7 +16,19 @@ export default {
     axios.get('https://jsonplaceholder.typicode.com/posts/'+this.$route.params.id).then(res=>{
       this.post = res.data
     })
-  }
+  },
+  head() {
+      return {
+        title: this.post.title+' - Tech Blog',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.post.body
+          }
+        ]
+      }
+    }
 }
 </script>
 <style >
