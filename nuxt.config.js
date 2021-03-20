@@ -28,6 +28,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/pwa',
      '@nuxtjs/vuetify'
   ],
   vuetify: {
@@ -42,6 +43,19 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+  pwa: {
+    manifest: {
+      name: 'Tech Blog'
+    },
+    meta: {
+      name: 'Tech Blog',
+      description: 'description my blog',
+      theme_color: '#eee',
+      lang: 'en',
+      nativeUI: true,
+      mobileApp: true
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
