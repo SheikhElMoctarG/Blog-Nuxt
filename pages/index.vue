@@ -29,12 +29,12 @@ export default {
       e: ""
     }
   },
-  created(){
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+  asyncData(){
+    return axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(res=>{
-        this.posts =  res.data
-    }).catch(e=>{
-      this.e += e
+        return {
+          posts: res.data
+        }
     })
   }
 }
